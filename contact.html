@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=4a17ddbd-9bab-4a61-a281-eaba0aeb14d6&lang=ru_RU"
+        type="text/javascript" type="text/javascript"></script>
+    <title>Контакты</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+
+            <div id="header__nav" class="header__inner">
+                <div>
+                    <a class="logo" href="#top">
+                        <picture class="logo__img">
+                            <!-- <source srcset="images/logo-mobile.png" media="(max-width: 600px)">-->
+                            <!-- Замены логотипа -->
+                            <img src="images/logov3.png" alt="logo" />
+                        </picture>
+                    </a>
+                </div>
+                <nav class="menu">
+                    <button class="menu__btn">
+                        <span class="menu__btn-line"></span>
+                    </button>
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="menu__list-item ">
+                            <a class="menu__list-link" href="about.html">О нас</a>
+                        </li>
+                        <li class="menu__list-item ">
+                            <a class="menu__list-link" href="uslugi.html">Услуги</a>
+                        </li>
+                        <li class="menu__list-item ">
+                            <a class="menu__list-link" href="geosluzba.html">Геослужба</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="akcioneram.html">Акционерам</a>
+                        </li>
+                        <li class="menu__list-item active">
+                            <a class="menu__list-link" href="contact.html">Контакты</a>
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="top">
+        <div class="top__inner">
+            <h1 class="top__title" data-aos="fade-down" data-aos-duration="3000">Контакты</h1>
+
+        </div>
+
+    </section>
+
+    <!-- <section class="accordion">
+        <div class="container">
+            <div class="accordion__items">
+
+                <div class="accordion__item accordion__item">
+                    <h4 class="accordion__item-title">Отделы</h4>
+                    <p class="accordion__item-text">
+                       
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        </div>
+    </section> -->
+
+   
+
+
+    <section class="contact">
+        <div class="contact__inner">
+            <div class="contact__title" data-aos="fade-right" data-aos-duration="3000">
+                <h1>Контакты</h1>
+                <img src="images/line.png" alt="">
+                <h1 class="contact__otdely"><a href="otdely.html"> Отделы</a></h1>
+            </div>
+            <div class="contact__info" data-aos="fade-left" data-aos-duration="3000">
+                <div class="contact__mail"><img src="images/letter.svg" alt=""> belkomplexproekt@tut.by</div>
+                <div class="contact__phone"><img src="images/telephone.svg" alt=""> +375 (17) 337-44-00</div>
+            </div>
+        </div>
+
+        <div class="contact__inner">
+            
+                <div data-aos="fade-right" data-aos-duration="3000" id="map" class="contact__map"></div>
+            
+            <div class="contact__title" data-aos="fade-left" data-aos-duration="3000">
+                <h1>Минск</h1>
+                <img src="images/line.png" alt="">
+                <div class="contact__title-text">Республика Беларусь, <br> 222029, г.Минск, ул.Чичерина, 21
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container" data-aos="fade-left" data-aos-duration="3000">
+            <h1 class="contact__input-title">Свяжитесь с нами</h1>
+            <div class="contact__input">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="E-mail">
+
+
+                <textarea name="comment" placeholder="Текст"></textarea>
+
+            </div>
+            <button class="contact__btn">Отправить</button>
+        </div>
+
+
+    </section>
+
+
+
+
+    <footer class="footer">
+        © 2020 «Белкомплекспроект»
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            disable: 'mobile',
+        });
+    </script>
+    <script>
+        ymaps.ready(init);
+        function init() {
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [53.915491, 27.565972],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 16
+            });
+            myMap.balloon.open(myMap.getCenter(), {
+                contentHeader: 'ОАО "БЕЛКОМПЛЕКСПРОЕКТ"',
+                contentBody: 'г.Минск, ул.Чичерина, 21'
+
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>
